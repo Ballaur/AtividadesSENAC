@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR" id="html-root" class="tema-geek">
+  <head id="cabecalho-site">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0d1224" />
+    <title id="titulo-pagina">GeekVerse — Landing Page</title>
+    <link id="link-css" rel="stylesheet" href="index.css" />
+    <link id="favicon" rel="icon" href="https://fav.farm/⭐" />
+  </head>
+
+  <body id="corpo">
+    <!-- Topo / Navegação -->
+    <header id="topo" class="topo">
+      <div id="logo-area" class="logo-area">
+        <img id="logo" class="logo" src="v1012-18.jpg" alt="Logo GeekVerse" />
+        <strong id="marca" class="marca">GeekVerse</strong>
+      </div>
+
+      <nav id="menu" class="menu" aria-label="Navegação principal">
+        <a id="link-inicio" class="menu-link" href="#inicio">Início</a>
+        <a id="link-recursos" class="menu-link" href="#recursos">Recursos</a>
+        <a id="link-galeria" class="menu-link" href="#galeria">Galeria</a>
+        <a id="link-planos" class="menu-link" href="#planos">Planos</a>
+        <a id="link-faq" class="menu-link" href="#faq">FAQ</a>
+        <a id="link-contato" class="menu-btn" href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main id="conteudo" class="conteudo">
+      <!-- Hero / Início -->
+      <section id="inicio" class="secao-hero" aria-labelledby="titulo-hero">
+        <div id="hero-caixa" class="hero-caixa">
+          <h1 id="titulo-hero" class="titulo-hero">
+            Entre no <span id="destaque-hero" class="texto-neon">mundo geek</span> com estilo
+          </h1>
+          <p id="subtitulo-hero" class="subtitulo-hero">
+            Tutoriais, colecionáveis, códigos e notícias — tudo em um só lugar.
+          </p>
+
+          <form id="form-newsletter" class="form-linha" action="#" method="post">
+            <label id="lbl-email" class="form-label" for="email">Assine a newsletter:</label>
+            <input id="email" class="form-input" type="email" name="email" placeholder="seu@email.com" required />
+            <button id="btn-assinar" class="btn-primario" type="submit">Quero receber</button>
+          </form>
+
+          <aside id="hero-aside" class="hero-aside" aria-label="Chamadas rápidas">
+            <ul id="lista-chamadas" class="lista">
+              <li class="lista-item">💾 Guias de programação</li>
+              <li class="lista-item">🎮 Reviews de games</li>
+              <li class="lista-item">🧩 Cultura pop & coleções</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Recursos / Features -->
+      <section id="recursos" class="secao" aria-labelledby="titulo-recursos">
+        <header id="cabecalho-recursos" class="secao-header">
+          <h2 id="titulo-recursos" class="titulo">Recursos principais</h2>
+          <p id="desc-recursos" class="descricao">Conteúdo prático e direto ao ponto.</p>
+        </header>
+
+        <div id="grid-recursos" class="grid-3">
+          <article id="card-artigos" class="card">
+            <h3 id="titulo-artigos" class="card-titulo">Artigos & Tutoriais</h3>
+            <p id="texto-artigos" class="card-texto">HTML, CSS, JS, Python e muito mais — do básico ao avançado.</p>
+            <a id="cta-artigos" class="card-acao" href="#planos">Acessar</a>
+          </article>
+
+          <article id="card-news" class="card">
+            <h3 id="titulo-news" class="card-titulo">News Geek</h3>
+            <p id="texto-news" class="card-texto">Novidades sobre games, animes, filmes e HQs.</p>
+            <a id="cta-news" class="card-acao" href="#faq">Saiba mais</a>
+          </article>
+
+          <article id="card-comunidade" class="card">
+            <h3 id="titulo-comunidade" class="card-titulo">Comunidade</h3>
+            <p id="texto-comunidade" class="card-texto">Participe de eventos, lives e desafios de código.</p>
+            <a id="cta-comunidade" class="card-acao" href="#contato">Entrar</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Galeria (figure/figcaption) -->
+      <section id="galeria" class="secao" aria-labelledby="titulo-galeria">
+        <header id="cabecalho-galeria" class="secao-header">
+          <h2 id="titulo-galeria" class="titulo">Galeria Geek</h2>
+          <p id="desc-galeria" class="descricao">Posters, cenas e colecionáveis.</p>
+        </header>
+
+        <div id="grid-galeria" class="grid-3">
+          <figure id="fig-um" class="fig">
+            <img id="img-um" class="fig-img" src="guerreiro-de-anime-cyberpunk-com-espadas.jpg" alt="Poster estilo anime 1" />
+            <figcaption id="cap-um" class="fig-cap">Poster Anime #01</figcaption>
+          </figure>
+
+          <figure id="fig-dois" class="fig">
+            <img id="img-dois" class="fig-img" src="ilustracao-da-cidade-anime.jpg" alt="Poster retrô 2" />
+            <figcaption id="cap-dois" class="fig-cap">Retro Game #02</figcaption>
+          </figure>
+
+          <figure id="fig-tres" class="fig">
+            <img id="img-tres" class="fig-img" src="um-samurai-cyberpunk-na-cidade-de-neon.jpg" alt="Poster sci-fi 3" />
+            <figcaption id="cap-tres" class="fig-cap">Sci-Fi #03</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Mídia (video + details/summary) -->
+      <section id="midia" class="secao" aria-labelledby="titulo-midia">
+        <header id="cabecalho-midia" class="secao-header">
+          <h2 id="titulo-midia" class="titulo">Gameplay do dia</h2>
+          <p id="desc-midia" class="descricao">Veja uma prévia rápida.</p>
+        </header>
+
+        <div id="midia-caixa" class="midia-caixa">
+          <video id="video-demo" class="video" controls poster="https://picsum.photos/seed/poster/800/450">
+            <source id="src-mp4" src="" type="video/mp4" />
+            Seu navegador não suporta o elemento <code id="code-video" class="code">video</code>.
+          </video>
+
+          <details id="detalhes-video" class="detalhes">
+            <summary id="resumo-video" class="detalhes-sumario">Informações do vídeo</summary>
+            <p id="texto-video" class="detalhes-texto">
+              Gameplay gravado em 1080p/60fps. Dica: ative as legendas.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Tabela de Planos -->
+      <section id="planos" class="secao" aria-labelledby="titulo-planos">
+        <header id="cabecalho-planos" class="secao-header">
+          <h2 id="titulo-planos" class="titulo">Planos</h2>
+          <p id="desc-planos" class="descricao">Escolha o seu pacote geek.</p>
+        </header>
+
+        <div id="tabela-wrap" class="tabela-wrap" role="region" aria-label="Tabela de planos">
+          <table id="tabela-planos" class="tabela">
+            <caption id="cap-tabela" class="tabela-cap">Comparativo de benefícios</caption>
+            <thead id="tabela-head" class="tabela-head">
+              <tr id="linha-head" class="tabela-linha">
+                <th id="th-plano" class="tabela-th">Plano</th>
+                <th id="th-recursos" class="tabela-th">Recursos</th>
+                <th id="th-preco" class="tabela-th">Preço</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-body" class="tabela-body">
+              <tr id="linha-free" class="tabela-linha">
+                <td class="tabela-td">Free</td>
+                <td class="tabela-td">Artigos semanais</td>
+                <td class="tabela-td">R$ 0</td>
+              </tr>
+              <tr id="linha-pro" class="tabela-linha">
+                <td class="tabela-td">Pro</td>
+                <td class="tabela-td">+ E-books e projetos</td>
+                <td class="tabela-td">R$ 19/mês</td>
+              </tr>
+              <tr id="linha-elite" class="tabela-linha">
+                <td class="tabela-td">Elite</td>
+                <td class="tabela-td">Lives, mentoria e comunidade</td>
+                <td class="tabela-td">R$ 39/mês</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="secao" aria-labelledby="titulo-faq">
+        <header id="cabecalho-faq" class="secao-header">
+          <h2 id="titulo-faq" class="titulo">Perguntas frequentes</h2>
+          <p id="desc-faq" class="descricao">Dúvidas comuns sobre a plataforma.</p>
+        </header>
+
+        <div id="faq-lista" class="faq-lista">
+          <details id="faq-1" class="faq-item">
+            <summary id="faq-1-sum" class="faq-item-sumario">Posso cancelar quando quiser?</summary>
+            <p id="faq-1-txt" class="faq-item-texto">Sim, o cancelamento é imediato.</p>
+          </details>
+
+          <details id="faq-2" class="faq-item">
+            <summary id="faq-2-sum" class="faq-item-sumario">Tem certificado?</summary>
+            <p id="faq-2-txt" class="faq-item-texto">Alguns cursos oferecem certificado digital.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Contato -->
+      <section id="contato" class="secao" aria-labelledby="titulo-contato">
+        <header id="cabecalho-contato" class="secao-header">
+          <h2 id="titulo-contato" class="titulo">Fale com a gente</h2>
+          <p id="desc-contato" class="descricao">Envie uma mensagem rápida.</p>
+        </header>
+
+        <form id="form-contato" class="form" action="#" method="post">
+          <fieldset id="fs-dados" class="form-grupo">
+            <legend id="lg-dados" class="form-legend">Seus dados</legend>
+
+            <div id="campo-nome" class="form-campo">
+              <label id="lbl-nome" class="form-label" for="nome">Nome</label>
+              <input id="nome" class="form-input" type="text" name="nome" required />
+            </div>
+
+            <div id="campo-assunto" class="form-campo">
+              <label id="lbl-assunto" class="form-label" for="assunto">Assunto</label>
+              <select id="assunto" class="form-select" name="assunto">
+                <option id="opt-duvida" value="duvida">Dúvida</option>
+                <option id="opt-parceria" value="parceria">Parceria</option>
+                <option id="opt-outro" value="outro">Outro</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <div id="campo-msg" class="form-campo">
+            <label id="lbl-mensagem" class="form-label" for="mensagem">Mensagem</label>
+            <textarea id="mensagem" class="form-textarea" name="mensagem" rows="4"></textarea>
+          </div>
+
+          <div id="aceite" class="form-campo-linha">
+            <input id="termos" class="form-check" type="checkbox" />
+            <label id="lbl-termos" class="form-label-inline" for="termos">
+              Aceito os <a id="link-termos" class="link" href="#" rel="nofollow">termos de uso</a>.
+            </label>
+          </div>
+          <button id="btn-enviar" class="btn-secundario" type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="rodape" class="rodape">
+      <small id="copy" class="rodape-copy">
+        © <time id="ano" class="rodape-ano" datetime="2025">2025</time> GeekVerse — Feito com ♥ para a comunidade.
+      </small>
+
+      <address id="endereco" class="rodape-endereco">
+        <a id="email-suporte" class="link" href="mailto:contato@geekverse.dev">contato@geekverse.dev</a>
+      </address>
+    </footer>
+  </body>
+</html>

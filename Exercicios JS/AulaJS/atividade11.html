@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <input id="n1" type="number">
+    <input id="n2" type="number">
+    <input id="n3" type="number">
+    <button onclick="calc()">Calcular</button>
+    <p id="res"></p>
+
+    <script>
+        function calc() {
+            let n1 = (document.getElementById("n1").value);
+            let n2 = (document.getElementById("n2").value);
+            let n3 = (document.getElementById("n3").value);
+            let media = (n1 + n2 + n3) / 3;
+
+            if (media >= 7) {
+                document.getElementById("res").innerText = "Aprovado" + media.toFixed(1);
+            }
+            else {
+                document.getElementById("res").innerText = "Reprovado" + media.toFixed(1);
+            }
+        }
+    </script>
+</body>
+
+</html>

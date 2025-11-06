@@ -1,0 +1,243 @@
+/* =============================== */
+/* FONTE PERSONALIZADA             */
+/* =============================== */
+@font-face {
+  font-family: "minha-fonte";
+  src: url("KleeOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =============================== */
+/* RESET E BASE                    */
+/* =============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "minha-fonte", Arial, sans-serif;
+  overflow-x: hidden;
+  background: #000;
+}
+
+/* =============================== */
+/* CONTAINER PRINCIPAL             */
+/* =============================== */
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+/* =============================== */
+/* VÍDEO DE FUNDO                  */
+/* =============================== */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(5px) brightness(0.6);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* =============================== */
+/* LOGIN / CADASTRO - CONTAINERS   */
+/* =============================== */
+.login-container,
+.cadastro-lado {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 340px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+/* =============================== */
+/* LOGIN CONTAINER                 */
+/* =============================== */
+.login-container {
+  margin: 10% auto;
+}
+
+/* =============================== */
+/* CADASTRO BALÃO FLUTUANTE        */
+/* =============================== */
+.cadastro-lado {
+  background: linear-gradient(180deg, #000000cc 0%, #8a1e1ecc 100%);
+  color: #e9cba7;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cadastro-lado:hover {
+  transform: translateY(-52%);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* =============================== */
+/* TÍTULOS                         */
+/* =============================== */
+h1, h2 {
+  margin-bottom: 20px;
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+}
+
+.subtitulo {
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  color: #f2a900;
+  margin-bottom: 20px;
+}
+
+/* =============================== */
+/* INPUTS E BOTÕES                 */
+/* =============================== */
+input, button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+
+input {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #333;
+}
+
+button {
+  background: linear-gradient(90deg, #9b2d3d, #b01020);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #e32636, #ffb833);
+  transform: scale(1.05);
+}
+
+/* =============================== */
+/* CAMPOS DO CADASTRO              */
+/* =============================== */
+.input-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #ededed;
+}
+
+#nome, #email, #senha, #confirmar-senha, #nascimento, #cidade {
+  border: 1px solid #8a8c91;
+  background: #ededed;
+  color: #000;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+#nome:focus, #email:focus, #senha:focus, 
+#confirmar-senha:focus, #nascimento:focus, #cidade:focus {
+  border: 1px solid #e2ad00;
+  box-shadow: 0 0 6px #e2cb0099;
+}
+
+/* =============================== */
+/* RADIO E CHECKBOX                */
+/* =============================== */
+.radio-group {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.termos label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #e9cba7;
+}
+
+/* =============================== */
+/* LINKS                           */
+/* =============================== */
+.login-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #e9cba7;
+  display: inline-block;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+  color: #00b5e2;
+}
+
+/* =============================== */
+/* RESPONSIVIDADE                  */
+/* =============================== */
+@media (max-width: 1024px) {
+  .cadastro-lado {
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    transform: translateY(-40%);
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container,
+  .cadastro-lado {
+    width: 85%;
+    padding: 30px;
+    margin: 15% auto;
+  }
+}
+
+@media (max-width: 480px) {
+  html, body {
+    overflow: auto;
+  }
+
+  .login-container,
+  .cadastro-lado {
+    width: 92%;
+    padding: 20px;
+    margin-top: 25%;
+  }
+
+  button {
+    padding: 10px;
+  }
+}

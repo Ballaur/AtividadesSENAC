@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <button onclick="mostrar()">Mostrar data e hora</button>
+  <p id="time"></p>
+
+  <script>
+    function mostrar() {
+      document.getElementById("time")
+      .innerText = new Date()
+      .toLocaleString();
+    }
+  </script>
+</body>
+</html>

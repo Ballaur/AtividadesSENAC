@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="n1" placeholder="Numero 1">
+    <p id="res">Numero : </p>
+    <button onclick="calc()">Calcular</button>
+    <script>
+        function calc() {
+            let n1 = Number(document.getElementById("n1").value);
+            document.getElementById("res").innerText = "Numero : " + (n1*2);
+        }
+    </script>
+</body>
+</html>

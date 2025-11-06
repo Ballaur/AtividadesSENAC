@@ -1,0 +1,141 @@
+/* ====== CÉU PRINCIPAL ====== */
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(120deg,
+    /* 🌅 Amanhecer */
+    #FBE8C8 0%, #FAD6A5 3%, #F9C98B 6%, #F8B96E 9%, #F7A95B 12%,
+    /* 🌤️ Manhã */
+    #EEC182 15%, #E7D4A7 18%, #C6E3EF 21%, #A7D8F0 24%, #91C8F3 27%,
+    /* ☀️ Meio-dia */
+    #7BB9F5 30%, #5BA5EE 33%, #4A90E2 36%, #3D7CD0 39%, #2F69B9 42%,
+    /* 🌇 Tarde */
+    #2A5C9F 46%, #27508E 50%, #23477F 54%, #213C72 58%,
+    /* 🌆 Pôr do Sol */
+    #FFB743 62%, #FFA34E 66%, #FF8B5C 70%, #FF6F91 74%, #ED5E9D 78%,
+    /* 🌃 Noite */
+    #7B61FF 82%, #4A47D6 85%, #2F2E91 88%, #1C3B70 91%, #13264E 94%,
+    /* 🌌 Meia-noite */
+    #0D1224 97%, #0A0B18 100%
+  );
+  background-size: 400% 400%;
+  animation: skyCycle 120s ease-in-out infinite;
+}
+
+/* ====== NUVENS ====== */
+.nuvens {
+  position: absolute;
+  inset: 0;
+  background: 
+    url('https://www.transparenttextures.com/patterns/soft-clouds.png');
+  background-size: 800px 800px;
+  opacity: 0.3;
+  filter: blur(1px);
+  animation: cloudsMove 240s linear infinite;
+  z-index: 1;
+}
+
+/* ====== BRILHO DO AMANHECER ====== */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 25% 75%, rgba(255, 210, 120, 0.45), transparent 70%);
+  mix-blend-mode: screen;
+  animation: sunriseGlow 120s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ====== ESTRELAS ====== */
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+  background-size: 180px 180px, 220px 220px, 280px 280px, 340px 340px;
+  background-position: 0 0, 120px 60px, 60px 160px, 90px 200px;
+  opacity: 0;
+  animation: starsTwinkle 120s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+
+/* ====== SOL ====== */
+.sol {
+  position: absolute;
+  bottom: 10%;
+  left: -10%;
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(circle at 30% 30%, #fffde1 40%, #ffec85 70%, #ffcf4d 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 80px 20px rgba(255, 200, 100, 0.4);
+  opacity: 0;
+  animation: solMove 120s ease-in-out infinite;
+  z-index: 3;
+}
+
+/* ====== LUA ====== */
+.lua {
+  position: absolute;
+  bottom: 10%;
+  left: -10%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 30% 30%, #fff 60%, #ddd 80%, #aaa 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  animation: luaMove 120s ease-in-out infinite;
+  z-index: 3;
+}
+
+/* ====== ANIMAÇÕES ====== */
+@keyframes skyCycle {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes sunriseGlow {
+  0%, 10% { opacity: 0.8; }
+  20%, 50% { opacity: 0; }
+  90%, 100% { opacity: 0.8; }
+}
+
+@keyframes starsTwinkle {
+  0%, 30% { opacity: 0; }
+  40%, 85% { opacity: 0.9; }
+  95%, 100% { opacity: 0; }
+}
+
+@keyframes cloudsMove {
+  0% { background-position: 0 0; }
+  100% { background-position: -2000px 0; }
+}
+
+@keyframes solMove {
+  0%, 5% { opacity: 0; transform: translateX(0) translateY(0) scale(0.8); }
+  10% { opacity: 1; transform: translateX(10vw) translateY(-10vh) scale(1); }
+  25% { transform: translateX(50vw) translateY(-40vh) scale(1.05); }
+  40% { transform: translateX(90vw) translateY(-15vh) scale(1); }
+  50% { opacity: 0; transform: translateX(100vw) translateY(0) scale(0.8); }
+  100% { opacity: 0; }
+}
+
+@keyframes luaMove {
+  0%, 45% { opacity: 0; transform: translateX(0) translateY(0) scale(0.8); }
+  50% { opacity: 1; transform: translateX(10vw) translateY(-10vh) scale(1); }
+  70% { transform: translateX(50vw) translateY(-35vh) scale(1.05); }
+  90% { opacity: 1; transform: translateX(90vw) translateY(-15vh) scale(1); }
+  100% { opacity: 0; transform: translateX(0) translateY(0) scale(0.8); }
+}

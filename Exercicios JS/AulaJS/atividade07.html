@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <button onclick="contar()">Clique</button>
+  <p id="click">Cliques: 0</p>
+
+  <script>
+    var total = 0;
+    function contar() {
+      total++;
+      document.getElementById("click").innerText = "Cliques: " + total;
+    }
+  </script>
+</body>
+</html>

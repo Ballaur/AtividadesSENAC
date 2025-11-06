@@ -1,0 +1,289 @@
+:root {
+    --BlueButton: #4A90E2;
+    --DarkButton: #2A5C9F;
+    --NightBlue: #1C3B70;
+    --DeepSky: #142B4D;
+    --CloudBox: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ===== CÉU PRINCIPAL ===== */
+body {
+  height: 100vh;
+  margin: 0;
+   /*overflow: hidden;*/
+  position: relative;
+  background: linear-gradient(120deg,
+    /* 🌅 Amanhecer (6h–8h) */
+    #FBE8C8 0%,
+    #FAD6A5 3%,
+    #F9C98B 6%,
+    #F8B96E 9%,
+    #F7A95B 12%,
+
+    /* 🌤️ Manhã (8h–10h) */
+    #EEC182 15%,
+    #E7D4A7 18%,
+    #C6E3EF 21%,
+    #A7D8F0 24%,
+    #91C8F3 27%,
+
+    /* ☀️ Meio-dia (10h–14h) */
+    #7BB9F5 30%,
+    #5BA5EE 33%,
+    #4A90E2 36%,
+    #3D7CD0 39%,
+    #2F69B9 42%,
+
+    /* 🌇 Tarde (14h–17h) */
+    #2A5C9F 46%,
+    #27508E 50%,
+    #23477F 54%,
+    #213C72 58%,
+
+    /* 🌆 Pôr do Sol (17h–19h) */
+    #FFB743 62%,
+    #FFA34E 66%,
+    #FF8B5C 70%,
+    #FF6F91 74%,
+    #ED5E9D 78%,
+
+    /* 🌃 Noite (19h–22h) */
+    #7B61FF 82%,
+    #4A47D6 85%,
+    #2F2E91 88%,
+    #1C3B70 91%,
+    #13264E 94%,
+
+    /* 🌌 Meia-noite (22h–00h) */
+    #0D1224 97%,
+    #0A0B18 100%
+  );
+  background-size: 400% 400%;
+  animation: skyCycle 120s ease-in-out infinite;
+    color: var(--DeepSky);
+}
+
+/* ===== BRILHO DO AMANHECER ===== */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 70%, rgba(255, 200, 120, 0.4), transparent 70%);
+  mix-blend-mode: screen;
+  animation: sunriseGlow 120s ease-in-out infinite;
+}
+
+/* ===== ESTRELAS ===== */
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(var(--CloudBox) 1px, transparent 1px),
+    radial-gradient(var(--CloudBox) 1px, transparent 1px),
+    radial-gradient(var(--CloudBox) 1px, transparent 1px);
+  background-size: 200px 200px, 250px 250px, 300px 300px;
+  background-position: 0 0, 100px 50px, 50px 150px;
+  opacity: 0;
+  animation: starsTwinkle 120s ease-in-out infinite;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes skyCycle {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Estrelas aparecem no fim do ciclo e desaparecem ao amanhecer */
+@keyframes starsTwinkle {
+  0%, 30% { opacity: 0; }
+  40%, 80% { opacity: 0.8; }
+  90%, 100% { opacity: 0; }
+}
+
+/* Brilho suave do amanhecer */
+@keyframes sunriseGlow {
+  0% { opacity: 0.8; }
+  25% { opacity: 0.3; }
+  50% { opacity: 0; }
+  100% { opacity: 0.8; }
+}
+
+
+/* Navbar */
+.navbar {
+    background: inherit;
+    backdrop-filter: blur(10px);
+    color: var(--CloudBox);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    color: var(--CloudBox);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    float: right;
+}
+
+.nav-links a {
+    color: var(--CloudBox);
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--BlueButton);
+    color: var(--CloudBox) !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-secundary {
+    background: var(--DarkButton);
+    color: var(--CloudBox) !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-terciary {
+    background: var(--NightBlue);
+    color: var(--CloudBox) !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-tertiary {
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-secundary:hover,
+.btn-terciary:hover {
+    transform: scale(1.05);
+}
+
+
+/* Hero */
+.hero {
+    color: var(--CloudBox);
+    text-align: center;
+    padding: 96px 0;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 32px;
+}
+
+/* Features */
+.features {
+    padding: 64px 0;
+    text-align: center;
+}
+
+.features h2 {
+    margin-bottom: 32px;
+}
+
+.feature-grid {
+    color: var(--DeepSky);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+}
+
+.feature {
+    background: var(--CloudBox);
+    padding: 32px;
+    border-radius: 8px;
+}
+
+/* About */
+.about {
+    padding: 64px 0;
+    background: var(--DeepSky);
+    color: var(--CloudBox);
+    text-align: center;
+}
+
+.about h2 {
+    margin-bottom: 16px;
+}
+
+/* Contact */
+.contact {
+    padding: 64px 0;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: grid;
+    gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid var(--CloudBox);
+    border-radius: 4px;
+}
+
+.contact-form button {
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: var(--CloudBox);
+    padding: 16px 0;
+    text-align: center;
+}

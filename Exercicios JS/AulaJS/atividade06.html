@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Saudação</title>
+</head>
+<body>
+  <input id="nome" placeholder="Digite seu nome">
+  <button onclick="mostrar()">Mostrar</button>
+  <p id="mensagem"></p>
+
+  <script>
+    function mostrar() {
+      var nome = document.getElementById("nome").value;
+      document.getElementById("mensagem").innerText = "Olá, " + nome + "!";
+    }
+  </script>
+</body>
+</html>

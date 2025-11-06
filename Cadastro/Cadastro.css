@@ -1,0 +1,146 @@
+/* 
+Paleta de cores
+Azul Claro e Azul Escuro (devido à água e à aura do personagem)
+#00B5E2 (azul água vibrante)
+#1E3A8A (azul escuro, mais profundo)
+Cores de Pele
+#E9CBA7 (cor suave de pele)
+#F1D0A9 (tom de pele mais claro)
+Vermelho e Roxo (nas roupas do personagem)
+#9B2D3D (vermelho escuro)
+#6B4F7D (roxo suave)
+Dourado (detalhes no uniforme e acessórios)
+#FFD700 (dourado)
+Preto e Branco
+#000000 (preto, para o fundo e contrastes)
+#FFFFFF (branco, para os detalhes no uniforme e texto)*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:/* "Noto Sans JP",*/ "Yu Gothic", /*"Meiryo",*/ sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.imagem-lado {
+    width: 70%;
+    height: 100%;
+}
+
+.imagem-lado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cadastro-lado {
+   /* background-image: url(1368953.jpeg);*/
+    width: 30%;
+    background: linear-gradient(180deg, #9B2D3D,#6B4F7D);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.cadastro-container {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    color: #E9CBA7;
+    /*background: linear-gradient(#00B5E299,
+            #FFFFFF33, #6B4F7D66, #000000CC, #1E3A8A99);*/
+}
+.cadastro-container h2{
+    margin-bottom: 10px;
+    color: #FFD700;
+}
+.subtitulo{
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #F1D0A9;
+}
+
+/* Grupo de inputs */
+.input-group{
+    text-align: left;
+    margin-bottom: 15px;
+}
+.input-group label{
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #F1D0A9;
+}
+#nome, #email, #senha, #confirmar-senha, #nascimento, #cidade{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #FFD700;
+    border-radius: 8px;
+    outline: none;
+    background: #F1D0A9;
+    color: #000000;
+}
+
+/* radios alinhados*/
+.radio-group{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+.radio-group label{
+    color: #E9CBA7;
+}
+
+/* CheckBox alinhado com Texto*/
+.termos label{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #E9CBA7;
+    gap: 10px;
+}
+.termos input[type="checkbox"]{
+    margin: 0;
+    width: 16px;
+    height: 16px;
+}
+
+/*botao*/
+.btn{
+    width: 100%;
+    padding: 12px;
+    background: #b371db;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn:hover{
+    background: #6B4F7D;
+}
+/*link de login*/
+.login-link{
+    margin-top: 15px;
+    font-size: 14px;
+    color: #E9CBA7;
+}
+.login-link:hover{
+    text-decoration: underline;
+    color: #FFD700;
+}

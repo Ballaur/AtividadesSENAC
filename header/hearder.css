@@ -1,0 +1,255 @@
+/* -----------------------
+   Reset e Base
+------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* importante para layouts consistentes */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+:root {
+    --bg: #0D0D0F;
+    --card: #16171B;
+    --borda: #2A2A2C;
+    --txt: #E5E5E5;
+    --txt2: #A0A0A0;
+    --dstq1: #E84545;
+    --dstq2: #4AB0E2;
+    --radius: 14px;
+    --transition: 0.3s ease;
+    /* padroniza transições */
+}
+
+body {
+    background: var(--bg);
+    color: var(--txt);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -----------------------
+   Cabeçalho
+------------------------*/
+#cabeca {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--borda);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+#cabeca a {
+    padding: 12px;
+    text-decoration: none;
+    color: var(--txt2);
+    transition: color var(--transition), border-color var(--transition);
+}
+
+#cabeca a:hover {
+    color: var(--dstq1);
+    border-bottom: 1px solid var(--borda);
+}
+
+#cabeca h1:hover {
+    color: var(--dstq1);
+}
+
+#logo {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer; /* deixa claro que é interativo */
+    transition: color var(--transition);
+}
+
+#logo .logo-primary {
+    font-weight: 500;
+    color: var(--txt);
+    transition: color var(--transition);
+}
+
+#logo .logo-secondary {
+    font-weight: 700;
+    color: var(--txt);
+    transition: color var(--transition);
+}
+
+/* Hover da logo */
+#logo:hover .logo-primary {
+    color: var(--dstq2); /* cor muda ao passar o mouse */
+}
+
+#logo:hover .logo-secondary {
+    color: var(--dstq1); /* cor muda ao passar o mouse */
+}
+
+
+#usuario {
+    display: flex;
+    gap: 12px;
+}
+
+#usuario .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--txt2);
+    font-size: 24px;
+    transition: color var(--transition);
+}
+
+#usuario .icon-btn:hover {
+    color: var(--dstq2);
+}
+
+#icon {
+    border-bottom: 1px solid var(--borda);
+}
+
+/* -----------------------
+   Seção Hero
+------------------------*/
+.hero {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: flex-end;
+    color: #fff;
+    overflow: hidden;
+}
+
+.hero-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* atrás do conteúdo */
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* impede interação com o vídeo */
+}
+
+.hero-main{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding: 48px;
+    max-width: 100%;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
+}
+/*.hero-info {
+   /* position: relative;
+    z-index: 1;
+    padding: 48px;
+    max-width: 100%;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+}*/
+
+.serie-label {
+    color: var(--dstq1);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.serie-label span{
+    color: var(--txt);
+}
+.title {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.description {
+    width: 30%;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+#texto{
+    background: #E84545;
+    width: 250px;
+}
+.main-buttons .btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 12px 24px;
+    margin-right: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.main-buttons .btn.assistir {
+    background: var(--dstq2);
+    color: var(--txt);
+}
+
+.main-buttons .btn:hover {
+    background: var(--dstq1);
+    transform: scale(1.2);
+}
+
+/* -----------------------
+   Carrossel
+------------------------*/
+.carousel {
+    height: 30vh;
+    background: var(--bg);
+    padding: 32px 48px;
+}
+
+.carousel h3 {
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: var(--txt);
+}
+
+.carousel-img {
+    height: 80%;
+    display: flex;
+    gap: 16px;
+    padding-bottom: 10px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.carousel-img img {
+    width: 230px;
+    height: auto;
+    border-radius: 4px;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.carousel-img img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+footer {
+    background: var(--card);
+    border-top: 1px solid var(--borda);
+    padding: 16px 20px;
+    margin-top: auto;
+}
+footer p{
+    text-align: center;
+}
